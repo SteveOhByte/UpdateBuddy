@@ -1,17 +1,15 @@
 using System.Configuration;
 using System.Diagnostics;
-using System.Reflection;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using Mono.Cecil;
 
 namespace UpdateBuddy;
 
 public partial class MainForm : MaterialForm
 {
-    private List<Mod> modsToUpdate;
-    private int currentModIndex = 0;
-    private int modsUpdated = 0;
+    private readonly List<Mod> modsToUpdate;
+    private int currentModIndex;
+    private int modsUpdated;
 
     public MainForm(List<Mod> modsToUpdate)
     {
@@ -56,7 +54,8 @@ public partial class MainForm : MaterialForm
         else
         {
             if (modsUpdated > 0)
-                MessageBox.Show($"All mods have been updated.", "Update Buddy - Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("All mods have been updated.", "Update Buddy - Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             Close();
         }
     }
@@ -76,15 +75,13 @@ public partial class MainForm : MaterialForm
             {
                 if (progressBar.InvokeRequired)
                 {
-                    progressBar.Invoke(new(() =>
+                    progressBar.Invoke(() =>
                     {
                         progressBar.Value = value;
-                    }));
+                    });
                 }
                 else
-                {
                     progressBar.Value = value;
-                }
             });
 
             await Downloader.DownloadAsync(mod.UpdateUrl, tempFile, mod.Name, progress);

@@ -4,6 +4,14 @@ namespace UpdateBuddy;
 
 public static class Extractor
 {
+    /// <summary>
+    /// Extracts the contents of a zip file to a specified directory.
+    /// </summary>
+    /// <param name="zipPath">The path to the zip file.</param>
+    /// <param name="extractTo">The directory to extract the contents to.</param>
+    /// <param name="modName">The name of the mod being extracted.</param>
+    /// <param name="progress">The progress reporter to track the extraction progress.</param>
+    /// <returns>A Task representing the asynchronous extraction operation.</returns>
     public static async Task ExtractAsync(string zipPath, string extractTo, string modName, IProgress<int> progress)
     {
         await Task.Run(() =>
@@ -11,9 +19,7 @@ public static class Extractor
             try
             {
                 if (!Directory.Exists(extractTo))
-                {
                     Directory.CreateDirectory(extractTo);
-                }
 
                 using ZipArchive archive = ZipFile.OpenRead(zipPath);
                 int totalFiles = archive.Entries.Count;
@@ -23,20 +29,14 @@ public static class Extractor
                     string destinationPath = Path.GetFullPath(Path.Combine(extractTo, entry.FullName));
 
                     if (!destinationPath.StartsWith(Path.GetFullPath(extractTo), StringComparison.OrdinalIgnoreCase))
-                    {
                         continue;
-                    }
 
                     string? destinationDir = Path.GetDirectoryName(destinationPath);
                     if (!string.IsNullOrEmpty(destinationDir) && !Directory.Exists(destinationDir))
-                    {
                         Directory.CreateDirectory(destinationDir);
-                    }
 
                     if (destinationPath.EndsWith(Path.DirectorySeparatorChar.ToString()))
-                    {
                         continue;
-                    }
 
                     try
                     {

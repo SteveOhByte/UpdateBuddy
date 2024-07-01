@@ -34,7 +34,7 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="RagePluginHook">
-          <HintPath>..\References\RagePluginHookSDK.dll</HintPath>
+          <HintPath>..\..\References\RagePluginHookSDK.dll</HintPath>
         </Reference>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>

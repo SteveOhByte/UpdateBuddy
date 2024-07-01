@@ -1,14 +1,19 @@
-﻿namespace UpdateBuddy
+﻿using System.ComponentModel;
+using MaterialSkin;
+using MaterialSkin.Controls;
+using UpdateBuddy.Properties;
+
+namespace UpdateBuddy
 {
     partial class MainForm
     {
-        private System.ComponentModel.IContainer components = null;
-        private MaterialSkin.Controls.MaterialLabel lblCurrentVersion;
-        private MaterialSkin.Controls.MaterialLabel lblNewVersion;
-        private MaterialSkin.Controls.MaterialButton btnUpdate;
-        private MaterialSkin.Controls.MaterialButton btnSkip;
-        private MaterialSkin.Controls.MaterialLabel lblTitle;
-        private MaterialSkin.Controls.MaterialProgressBar progressBar;
+        private IContainer components = null;
+        private MaterialLabel lblCurrentVersion;
+        private MaterialLabel lblNewVersion;
+        private MaterialButton btnUpdate;
+        private MaterialButton btnSkip;
+        private MaterialLabel lblTitle;
+        private MaterialProgressBar progressBar;
 
         protected override void Dispose(bool disposing)
         {
@@ -21,18 +26,18 @@
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            lblCurrentVersion = new MaterialSkin.Controls.MaterialLabel();
-            lblNewVersion = new MaterialSkin.Controls.MaterialLabel();
-            btnUpdate = new MaterialSkin.Controls.MaterialButton();
-            btnSkip = new MaterialSkin.Controls.MaterialButton();
-            lblTitle = new MaterialSkin.Controls.MaterialLabel();
-            progressBar = new MaterialSkin.Controls.MaterialProgressBar();
-            tipButton = new MaterialSkin.Controls.MaterialButton();
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
+            lblCurrentVersion = new MaterialLabel();
+            lblNewVersion = new MaterialLabel();
+            btnUpdate = new MaterialButton();
+            btnSkip = new MaterialButton();
+            lblTitle = new MaterialLabel();
+            progressBar = new MaterialProgressBar();
+            tipButton = new MaterialButton();
             dismissTipButton = new LinkLabel();
             kofiButton = new LinkLabel();
             patreonButton = new LinkLabel();
-            closeTipButton = new MaterialSkin.Controls.MaterialButton();
+            closeTipButton = new MaterialButton();
             SuspendLayout();
             // 
             // lblCurrentVersion
@@ -41,7 +46,7 @@
             lblCurrentVersion.Depth = 0;
             lblCurrentVersion.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblCurrentVersion.Location = new Point(70, 137);
-            lblCurrentVersion.MouseState = MaterialSkin.MouseState.HOVER;
+            lblCurrentVersion.MouseState = MouseState.HOVER;
             lblCurrentVersion.Name = "lblCurrentVersion";
             lblCurrentVersion.Size = new Size(111, 19);
             lblCurrentVersion.TabIndex = 1;
@@ -54,7 +59,7 @@
             lblNewVersion.Depth = 0;
             lblNewVersion.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblNewVersion.Location = new Point(272, 137);
-            lblNewVersion.MouseState = MaterialSkin.MouseState.HOVER;
+            lblNewVersion.MouseState = MouseState.HOVER;
             lblNewVersion.Name = "lblNewVersion";
             lblNewVersion.Size = new Size(91, 19);
             lblNewVersion.TabIndex = 2;
@@ -65,19 +70,19 @@
             // 
             btnUpdate.AutoSize = false;
             btnUpdate.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnUpdate.Density = MaterialButton.MaterialButtonDensity.Default;
             btnUpdate.Depth = 0;
             btnUpdate.HighEmphasis = true;
             btnUpdate.Icon = null;
             btnUpdate.Location = new Point(110, 223);
             btnUpdate.Margin = new Padding(4, 6, 4, 6);
-            btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            btnUpdate.MouseState = MouseState.HOVER;
             btnUpdate.Name = "btnUpdate";
             btnUpdate.NoAccentTextColor = Color.Empty;
             btnUpdate.Size = new Size(77, 36);
             btnUpdate.TabIndex = 6;
             btnUpdate.Text = "Update";
-            btnUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnUpdate.Type = MaterialButton.MaterialButtonType.Contained;
             btnUpdate.UseAccentColor = false;
             btnUpdate.UseVisualStyleBackColor = true;
             btnUpdate.Click += btnUpdate_Click;
@@ -86,19 +91,19 @@
             // 
             btnSkip.AutoSize = false;
             btnSkip.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnSkip.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnSkip.Density = MaterialButton.MaterialButtonDensity.Default;
             btnSkip.Depth = 0;
             btnSkip.HighEmphasis = true;
             btnSkip.Icon = null;
             btnSkip.Location = new Point(301, 223);
             btnSkip.Margin = new Padding(4, 6, 4, 6);
-            btnSkip.MouseState = MaterialSkin.MouseState.HOVER;
+            btnSkip.MouseState = MouseState.HOVER;
             btnSkip.Name = "btnSkip";
             btnSkip.NoAccentTextColor = Color.Empty;
             btnSkip.Size = new Size(77, 36);
             btnSkip.TabIndex = 7;
             btnSkip.Text = "Skip";
-            btnSkip.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnSkip.Type = MaterialButton.MaterialButtonType.Contained;
             btnSkip.UseAccentColor = false;
             btnSkip.UseVisualStyleBackColor = true;
             btnSkip.Click += btnSkip_Click;
@@ -108,7 +113,7 @@
             lblTitle.Depth = 0;
             lblTitle.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblTitle.Location = new Point(149, 74);
-            lblTitle.MouseState = MaterialSkin.MouseState.HOVER;
+            lblTitle.MouseState = MouseState.HOVER;
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(211, 50);
             lblTitle.TabIndex = 0;
@@ -119,7 +124,7 @@
             // 
             progressBar.Depth = 0;
             progressBar.Location = new Point(70, 181);
-            progressBar.MouseState = MaterialSkin.MouseState.HOVER;
+            progressBar.MouseState = MouseState.HOVER;
             progressBar.Name = "progressBar";
             progressBar.Size = new Size(332, 5);
             progressBar.Style = ProgressBarStyle.Continuous;
@@ -130,19 +135,19 @@
             // 
             tipButton.AutoSize = false;
             tipButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tipButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            tipButton.Density = MaterialButton.MaterialButtonDensity.Default;
             tipButton.Depth = 0;
             tipButton.HighEmphasis = true;
             tipButton.Icon = null;
             tipButton.Location = new Point(463, 240);
             tipButton.Margin = new Padding(4, 6, 4, 6);
-            tipButton.MouseState = MaterialSkin.MouseState.HOVER;
+            tipButton.MouseState = MouseState.HOVER;
             tipButton.Name = "tipButton";
             tipButton.NoAccentTextColor = Color.Empty;
             tipButton.Size = new Size(30, 19);
             tipButton.TabIndex = 9;
             tipButton.Text = "Tip";
-            tipButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            tipButton.Type = MaterialButton.MaterialButtonType.Contained;
             tipButton.UseAccentColor = false;
             tipButton.UseVisualStyleBackColor = true;
             tipButton.Visible = false;
@@ -164,7 +169,7 @@
             // kofiButton
             // 
             kofiButton.Cursor = Cursors.Hand;
-            kofiButton.Image = Properties.Resources.kofi;
+            kofiButton.Image = Resources.kofi;
             kofiButton.Location = new Point(364, 181);
             kofiButton.Name = "kofiButton";
             kofiButton.Size = new Size(129, 50);
@@ -175,7 +180,7 @@
             // patreonButton
             // 
             patreonButton.Cursor = Cursors.Hand;
-            patreonButton.Image = Properties.Resources.patreon;
+            patreonButton.Image = Resources.patreon;
             patreonButton.Location = new Point(364, 128);
             patreonButton.Name = "patreonButton";
             patreonButton.Size = new Size(129, 50);
@@ -187,19 +192,19 @@
             // 
             closeTipButton.AutoSize = false;
             closeTipButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            closeTipButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            closeTipButton.Density = MaterialButton.MaterialButtonDensity.Default;
             closeTipButton.Depth = 0;
             closeTipButton.HighEmphasis = true;
             closeTipButton.Icon = null;
             closeTipButton.Location = new Point(478, 105);
             closeTipButton.Margin = new Padding(4, 6, 4, 6);
-            closeTipButton.MouseState = MaterialSkin.MouseState.HOVER;
+            closeTipButton.MouseState = MouseState.HOVER;
             closeTipButton.Name = "closeTipButton";
             closeTipButton.NoAccentTextColor = Color.Empty;
             closeTipButton.Size = new Size(15, 19);
             closeTipButton.TabIndex = 13;
             closeTipButton.Text = "X";
-            closeTipButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            closeTipButton.Type = MaterialButton.MaterialButtonType.Contained;
             closeTipButton.UseAccentColor = false;
             closeTipButton.UseVisualStyleBackColor = true;
             closeTipButton.Visible = false;
@@ -230,10 +235,10 @@
             PerformLayout();
         }
 
-        private MaterialSkin.Controls.MaterialButton tipButton;
+        private MaterialButton tipButton;
         private LinkLabel dismissTipButton;
         private LinkLabel kofiButton;
         private LinkLabel patreonButton;
-        private MaterialSkin.Controls.MaterialButton closeTipButton;
+        private MaterialButton closeTipButton;
     }
 }
